@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-secondary text-primary font-sans transition-colors duration-300;
+  }
+
+  /* Dark mode: superficies */
+  .dark body                        { @apply bg-gray-950 text-gray-100; }
+  .dark .bg-white                   { @apply bg-gray-900; }
+  .dark .bg-gray-soft               { @apply bg-gray-950; }
+  .dark .bg-black                   { @apply bg-gray-950; }
+
+  /* Dark mode: textos */
+  .dark .text-primary               { @apply text-gray-100; }
+  .dark .text-text-muted            { @apply text-gray-400; }
+  .dark .text-gray-700              { @apply text-gray-300; }
+
+  /* Dark mode: bordes y tarjetas */
+  .dark .border-gray-100            { @apply border-gray-700; }
+  .dark .border-gray-200            { @apply border-gray-700; }
+  .dark .border-gray-300            { @apply border-gray-600; }
+  .dark .bg-gray-200                { @apply bg-gray-700; }
+  .dark .shadow-sm                  { box-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+
+  /* Dark mode: formulario */
+  .dark .form-input {
+    @apply bg-gray-800 border-gray-600 text-gray-100 placeholder-gray-500;
+  }
+
+  /* Dark mode: sección title */
+  .dark .section-title              { @apply text-gray-100; }
+
+  h1, h2, h3, h4 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 bg-accent text-white
+           font-semibold px-6 py-3 rounded-lg
+           hover:bg-accent-dark transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center gap-2 border-2 border-primary text-primary
+           font-semibold px-6 py-3 rounded-lg
+           hover:bg-primary hover:text-white transition-colors duration-200;
+  }
+
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-section;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-bold text-primary mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-text-muted max-w-2xl;
+  }
+
+  .form-input {
+    @apply w-full border border-gray-300 rounded-lg px-4 py-3
+           text-primary placeholder-gray-400
+           focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent
+           transition-shadow duration-200;
+  }
+}
+
+/* ── Scroll reveal ───────────────────────────────────────────── */
+.sr-hidden {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.sr-hidden.sr-up     { transform: translateY(32px); }
+.sr-hidden.sr-left   { transform: translateX(-32px); }
+.sr-hidden.sr-right  { transform: translateX(32px); }
+
+.sr-visible {
+  opacity: 1 !important;
+  transform: none !important;
+}
