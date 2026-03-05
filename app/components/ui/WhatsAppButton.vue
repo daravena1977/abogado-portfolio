@@ -5,7 +5,7 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full
+      class="fixed bottom-8 right-5 sm:bottom-6 sm:right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full
              flex items-center justify-center shadow-2xl shadow-green-500/30
              hover:scale-110 hover:shadow-green-500/50
              transition-all duration-200 group"
